@@ -46,7 +46,7 @@ public class RaycastShoot : MonoBehaviour
         shot = false; //we haven't shot yet
 
         //check if: player shot gun, enough time has passed to shoot next shot, if player is alive, and if game is not paused
-        if(Input.GetMouseButtonDown(0) && Time.time > nextFire && !Player.playerIsDead && !Level01Controller.GameIsPaused)
+        if(Input.GetMouseButton(0) && Time.time > nextFire && !Player.playerIsDead && !Level01Controller.GameIsPaused)
         {
             nextFire = Time.time + fireRate; //set countdown for next shot
 
