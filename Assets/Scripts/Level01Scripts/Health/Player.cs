@@ -14,12 +14,10 @@ public class Player : MonoBehaviour
     public AudioClip DeathSound;
 
     public Interactable focus;
-    //PlayerMovement playerMovement;
     public int maxHealth = 100;
     public int currentHealth;
     public static int armor;
     public static int totalArmor;
-    //public static float alteredSpeed;
     public static float speed;
 
     public HealthBar healthBar;
@@ -51,16 +49,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            TakeDamage(20);
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            TakeDamage(-20);
-        }*/
-
         totalArmor = armor;
         _currentArmorTextView.text = "Armor: " + totalArmor.ToString();
         if (currentHealth == 0)
@@ -197,8 +185,6 @@ public class Player : MonoBehaviour
         }
         else if (collider.tag == "SpeedUp")
         {
-            //alteredSpeed = PlayerMovement.GetSpeed() * 5f;
-            //SetAlteredSpeed(alteredSpeed);
             Debug.Log("SpeedUp");
         }
         else if(collider.tag == "SlowDownPowerUp")
@@ -224,7 +210,6 @@ public class Player : MonoBehaviour
 
     public static bool IsPlayerDead()
     {
-        Debug.Log("Player is dead " + playerIsDead);
         return playerIsDead;
     }
 }

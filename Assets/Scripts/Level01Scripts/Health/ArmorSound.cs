@@ -30,7 +30,16 @@ public class ArmorSound : MonoBehaviour
 
     IEnumerator Destroy()
     {
-        GetComponent<MeshRenderer>().enabled = false;
+        if (!(GetComponent<MeshRenderer>() == null))
+        {
+            GetComponent<MeshRenderer>().enabled = false;
+        }
+        else
+        {
+            Renderer[] rs = GetComponentsInChildren<Renderer>();
+            foreach (Renderer r in rs)
+                r.enabled = false;
+        }
         GetComponent<Collider>().enabled = false;
         yield return new WaitForSeconds(10f);
         Player.RemoveArmor(3);

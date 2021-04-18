@@ -42,20 +42,34 @@ public class Level01Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!GameIsPaused)
+        if (!GameIsPaused)
         {
             currentTime = GetCurrentTime();
             Time.timeScale = currentTime;
         }
 
+        ChooseGun();
+
+        Debug.Log("Treasure count if win " + treasureCount);
+        if (treasureCount == 5)
+        {
+            Win();
+        }
+
+        //pause menu
+        EscPressed();
+    }
+
+    private void ChooseGun()
+    {
         if (RaycastShoot.GetIfShot() && WeaponSwitching.GetSelectedWeapon() == 0)
         {
             //int score = EnemyController.GetScore();
-            if(EnemyController.GotShot())
+            if (EnemyController.GotShot())
             {
                 _currentScore += 5;
                 IncreaseScore(_currentScore);
-            }  
+            }
         }
 
         if (RaycastShoot.GetIfShot() && WeaponSwitching.GetSelectedWeapon() == 1)
@@ -68,16 +82,8 @@ public class Level01Controller : MonoBehaviour
             }
         }
 
-        Debug.Log("Treasure count if win " + treasureCount);
-        if (treasureCount == 5)
-        {
-            Win();
-        }
 
-        //pause menu
-        EscPressed();        
     }
-
 
 
     private void Win()
