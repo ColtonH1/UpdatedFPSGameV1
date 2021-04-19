@@ -1,4 +1,5 @@
 ﻿/*
+ * Made by Colton Henderson
  * This script determines what the player shoots at
  * This also plays the shooting sound and the impact sound
  */

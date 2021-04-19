@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/* Made by Colton Henderson
+ * This script Controlls the enemy
+ * How the enemy faces the player
+ * The radius of the enemy's view
+ * The damage the enemy receives
+ * How the enemy shoots
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;

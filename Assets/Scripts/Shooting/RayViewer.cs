@@ -1,4 +1,5 @@
 ﻿/*
+ * Made by Colton Henderson
  * This script shows the green firing line when debugging
  * It shows up in the scene mode when play mode is on
  */

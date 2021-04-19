@@ -21,6 +21,7 @@ public class PlayerSpeedUp : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("Player picked up speed");
+            PowerUpSound.Play();
             Player.SetAlteredSpeed(speed * 2);
             StartCoroutine("Destroy");
         }
@@ -30,7 +31,16 @@ public class PlayerSpeedUp : MonoBehaviour
 
     IEnumerator Destroy()
     {
-        GetComponent<MeshRenderer>().enabled = false;
+        if (!(GetComponent<MeshRenderer>() == null))
+        {
+            GetComponent<MeshRenderer>().enabled = false;
+        }
+        else
+        {
+            Renderer[] rs = GetComponentsInChildren<Renderer>();
+            foreach (Renderer r in rs)
+                r.enabled = false;
+        }
         GetComponent<Collider>().enabled = false;
         yield return new WaitForSeconds(10f);
         Player.SetAlteredSpeed(speed);

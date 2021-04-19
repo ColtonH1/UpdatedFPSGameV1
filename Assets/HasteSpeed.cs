@@ -4,27 +4,36 @@ using UnityEngine;
 
 public class HasteSpeed : MonoBehaviour
 {
-        private AudioSource HasteCollect ;
+    private AudioSource HasteCollect;
+    public static float speed;
     //public ParticleSystem pickupEffect;
-    // Start is called before the first frame update
+
     void Start()
     {
         HasteCollect = GetComponent<AudioSource>();
+        speed = PlayerMovement.GetSpeed();
     }
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
             HasteCollect.Play();
-            Level01Controller.SetCurrentTime(2.0f);
+            Player.SetAlteredSpeed(speed * 2);
             StartCoroutine("Destroy");
         }       
     }
-        IEnumerator Destroy()
+    IEnumerator Destroy()
     {
-        Renderer[] rs = GetComponentsInChildren<Renderer>();
-        foreach (Renderer r in rs)
-        r.enabled = false;
+        if (!(GetComponent<MeshRenderer>() == null))
+        {
+            GetComponent<MeshRenderer>().enabled = false;
+        }
+        else
+        {
+            Renderer[] rs = GetComponentsInChildren<Renderer>();
+            foreach (Renderer r in rs)
+                r.enabled = false;
+        }
         Debug.Log("Gotta go fast!");
         yield return new WaitForSeconds(25f);
         Level01Controller.SetCurrentTime(1f);

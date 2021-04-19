@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Made by Colton Henderson
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -46,10 +48,12 @@ public class PlayerMovement : MonoBehaviour
         //currentSpeed = speed;
 
         currentSpeed = Player.GetNewSpeed();
+        Debug.Log("Current Speed before running: " + currentSpeed);
 
         Jumping();
        
         currentSpeed = Running(currentSpeed);
+        Debug.Log("Current Speed after running: " + currentSpeed);
 
         Moving(currentSpeed);
 

@@ -1,4 +1,15 @@
-﻿using System;
+﻿/* 
+ * Made by Colton Henderson
+ * This script controls the player
+ * Checks player health
+ * Checks player armor
+ * Sets player death screen
+ * Sets player taking damage
+ * Gives health if health is picked up
+ * Unused, but possible future implementation, focus functions
+ */
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
