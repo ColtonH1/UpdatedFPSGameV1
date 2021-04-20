@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿/*
+ * Made by Colton Henderson
+ * This controls the treasure pickup
+ * Sound will be played when the treasure is picked up
+ * A function will allow level01controller script to see the treasure has been picked up
+ * The mesh will be turned off so it cannot be seen anymore (if statement is used to check if object has children with mesh)
+ * The collider will be turned off to not allow multiple pickups 
+ * The object will be destroyed
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,8 +35,6 @@ public class TreasureChest : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            //Instantiate(pickupEffect, transform.position, transform.rotation);
-            //pickupEffect.Play();
             TreasureCollect.Play();
             Collect = true;
             StartCoroutine("Destroy");
@@ -42,41 +50,20 @@ public class TreasureChest : MonoBehaviour
 
     IEnumerator Destroy()
     {
-        yield return new WaitForSeconds(.5f);
-        Collect = false;
-        gameObject.SetActive(false);
-        
-    }
-    /*
-    public GameObject pickupEffect;
-    private AudioSource ArmorAudio;
-    public AudioClip ArmorClip;
-
-    void Start()
-    {
-        ArmorAudio = GetComponent<AudioSource>();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Player"))
+        if (!(GetComponent<MeshRenderer>() == null))
         {
-            Pickup();
+            GetComponent<MeshRenderer>().enabled = false;
         }
-    }
-
-    void Pickup()
-    {
-        ArmorAudio.PlayOneShot(ArmorClip);
-        Instantiate(pickupEffect, transform.position, transform.rotation);
-        Destroy(gameObject);
+        else
+        {
+            Renderer[] rs = GetComponentsInChildren<Renderer>();
+            foreach (Renderer r in rs)
+                r.enabled = false;
+        }
+        GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(1f);
+        Collect = false;
+        transform.root.gameObject.SetActive(false);
         
     }
-
-    IEnumerator Destroy()
-    {
-        yield return new WaitForSeconds(1f);
-        pickupEffect.SetActive(false);
-
-    }*/
 }
