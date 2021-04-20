@@ -24,6 +24,7 @@ public class HasteSpeed : MonoBehaviour
     }
     IEnumerator Destroy()
     {
+        GetComponent<Collider>().enabled = false;
         if (!(GetComponent<MeshRenderer>() == null))
         {
             GetComponent<MeshRenderer>().enabled = false;
@@ -35,8 +36,9 @@ public class HasteSpeed : MonoBehaviour
                 r.enabled = false;
         }
         Debug.Log("Gotta go fast!");
-        yield return new WaitForSeconds(25f);
-        Level01Controller.SetCurrentTime(1f);
+        yield return new WaitForSeconds(20f);
+        Debug.Log("Stop being fast!");
+        Player.SetAlteredSpeed(speed);
         gameObject.SetActive(false);        
     }
 }

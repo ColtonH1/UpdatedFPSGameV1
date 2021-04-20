@@ -1,5 +1,5 @@
 ﻿/*
- * V2
+ * Made by Colton Henderson
  */
 
 using System;
@@ -50,7 +50,6 @@ public class Level01Controller : MonoBehaviour
 
         ChooseGun();
 
-        Debug.Log("Treasure count if win " + treasureCount);
         if (treasureCount == 5)
         {
             Win();

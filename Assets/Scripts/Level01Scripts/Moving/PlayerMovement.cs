@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
         characterController = gameObject.GetComponent<CharacterController>();
         height = characterController.height;
         startingSpeed = speed;
-        alteredSpeed = speed;
+        alteredSpeed = 0;
     }
 
     // Update is called once per frame
@@ -48,11 +48,13 @@ public class PlayerMovement : MonoBehaviour
         //currentSpeed = speed;
 
         currentSpeed = Player.GetNewSpeed();
+        alteredSpeed = currentSpeed - startingSpeed; //the difference between the current speed and the normal speed
         Debug.Log("Current Speed before running: " + currentSpeed);
 
         Jumping();
        
         currentSpeed = Running(currentSpeed);
+        currentSpeed += alteredSpeed; 
         Debug.Log("Current Speed after running: " + currentSpeed);
 
         Moving(currentSpeed);
