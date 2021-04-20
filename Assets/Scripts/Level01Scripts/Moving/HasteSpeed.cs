@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//written by Jason
+//script is supposed to increase the player's movespeed for a certain duration
 public class HasteSpeed : MonoBehaviour
 {
     private AudioSource HasteCollect;

@@ -31,8 +31,17 @@ public class SlowDown : MonoBehaviour
 
     IEnumerator Destroy()
     {
-        GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
+        if (!(GetComponent<MeshRenderer>() == null))
+        {
+            GetComponent<MeshRenderer>().enabled = false;
+        }
+        else
+        {
+            Renderer[] rs = GetComponentsInChildren<Renderer>();
+            foreach (Renderer r in rs)
+                r.enabled = false;
+        }
         yield return new WaitForSeconds(10f);
         Level01Controller.SetCurrentTime(1f);
         gameObject.SetActive(false);
