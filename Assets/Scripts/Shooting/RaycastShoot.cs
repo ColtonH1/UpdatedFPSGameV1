@@ -28,8 +28,7 @@ public class RaycastShoot : MonoBehaviour
     private LineRenderer laserLine;
     private float nextFire; //how soon after each shot can we shoot again
 
-    public static bool isPlayerDead; 
-
+    public static bool isPlayerDead;
 
     void Start()
     {
@@ -43,6 +42,7 @@ public class RaycastShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //alteredFireRate = sternFireRate;//
         isPlayerDead = Player.IsPlayerDead(); //player can't shoot if they're dead
         shot = false; //we haven't shot yet
 
@@ -51,7 +51,7 @@ public class RaycastShoot : MonoBehaviour
         {
             nextFire = Time.time + fireRate; //set countdown for next shot
 
-            StartCoroutine(ShotEffect()); //player shooting sound
+           StartCoroutine(ShotEffect()); //player shooting sound
 
             Vector3 rayOrigin = fpsCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0)); //set ray origin
             RaycastHit hit; //what we hit

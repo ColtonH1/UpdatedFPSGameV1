@@ -63,7 +63,7 @@ public class TreasureChest : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         yield return new WaitForSeconds(1f);
         Collect = false;
-        transform.root.gameObject.SetActive(false);
+        transform.parent.gameObject.SetActive(false);
         
     }
 }

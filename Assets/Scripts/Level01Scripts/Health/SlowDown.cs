@@ -7,22 +7,22 @@ public class SlowDown : MonoBehaviour
     
     private AudioSource PowerUpSound;
     public static bool speedIsAltered = false;
-    //public ParticleSystem pickupEffect;
+    public static float speed; //
 
 
     void Start()
     {
         PowerUpSound = GetComponent<AudioSource>();
+        speed = PlayerMovement.GetSpeed(); //
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            //Instantiate(pickupEffect, transform.position, transform.rotation);
-            //pickupEffect.Play();
             PowerUpSound.Play();
             Level01Controller.SetCurrentTime(0.5f);
+            Player.SetAlteredSpeed(speed * 2); //
             StartCoroutine("Destroy");
         }
         
@@ -44,39 +44,8 @@ public class SlowDown : MonoBehaviour
         }
         yield return new WaitForSeconds(10f);
         Level01Controller.SetCurrentTime(1f);
+        Player.SetAlteredSpeed(speed); //
         gameObject.SetActive(false);
 
     }
-    /*
-    public GameObject pickupEffect;
-    private AudioSource ArmorAudio;
-    public AudioClip ArmorClip;
-
-    void Start()
-    {
-        ArmorAudio = GetComponent<AudioSource>();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Player"))
-        {
-            Pickup();
-        }
-    }
-
-    void Pickup()
-    {
-        ArmorAudio.PlayOneShot(ArmorClip);
-        Instantiate(pickupEffect, transform.position, transform.rotation);
-        Destroy(gameObject);
-        
-    }
-
-    IEnumerator Destroy()
-    {
-        yield return new WaitForSeconds(1f);
-        pickupEffect.SetActive(false);
-
-    }*/
 }

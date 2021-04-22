@@ -49,13 +49,11 @@ public class PlayerMovement : MonoBehaviour
 
         currentSpeed = Player.GetNewSpeed();
         alteredSpeed = currentSpeed - startingSpeed; //the difference between the current speed and the normal speed
-        Debug.Log("Current Speed before running: " + currentSpeed);
 
         Jumping();
        
         currentSpeed = Running(currentSpeed);
         currentSpeed += alteredSpeed; 
-        Debug.Log("Current Speed after running: " + currentSpeed);
 
         Moving(currentSpeed);
 
