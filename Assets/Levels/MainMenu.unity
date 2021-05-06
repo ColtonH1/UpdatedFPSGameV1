@@ -1722,7 +1722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ee5f9f226948e47b3fd0e63651dab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingSong: {fileID: 8300000, guid: d66a8a51afedc9743afddf6d6d3bb29c, type: 3}
+  _startingSong: {fileID: 8300000, guid: 377da18759d6d5d4e971caf1baac5156, type: 3}
   _highScoreTextView: {fileID: 464198020}
 --- !u!1 &509262226
 GameObject:
@@ -1905,7 +1905,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d66a8a51afedc9743afddf6d6d3bb29c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 377da18759d6d5d4e971caf1baac5156, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
