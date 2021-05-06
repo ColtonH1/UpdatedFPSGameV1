@@ -17,7 +17,6 @@ public class TreasureChest : MonoBehaviour
     
     private AudioSource TreasureCollect;
     private static bool Collect;
-    //public ParticleSystem pickupEffect;
 
 
     void Start()
