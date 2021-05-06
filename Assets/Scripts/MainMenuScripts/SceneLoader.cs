@@ -1,4 +1,5 @@
 ﻿/*
+ * This script was made by Colton Henderson
  * This script is in the main menu under 'level controller'
  * This is to load the next scene (level01)
  */

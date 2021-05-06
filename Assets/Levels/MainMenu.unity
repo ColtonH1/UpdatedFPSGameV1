@@ -4169,7 +4169,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Colton Henderson
+  m_Text: 'Colton Henderson
+
+    Jason Cothran
+
+    Jesus Galera Ortega
+
+    Shelby
+    King
+
+'
 --- !u!222 &985342356
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5434,7 +5443,16 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Created by:
 
-    Colton Henderson'
+    Colton Henderson
+
+    Jason Cothran
+
+    Jesus Galera
+    Ortega
+
+    Shelby King
+
+'
 --- !u!222 &1458952406
 CanvasRenderer:
   m_ObjectHideFlags: 0
