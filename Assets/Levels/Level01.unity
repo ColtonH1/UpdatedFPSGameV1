@@ -16106,7 +16106,7 @@ MonoBehaviour:
   _currentArmorTextView: {fileID: 395312603}
   cam: {fileID: 2063275678}
   HurtSound: {fileID: 8300000, guid: 8c117bcde1d5b36428619a55177067e4, type: 3}
-  DeathSound: {fileID: 8300000, guid: fd5f307c2e1b7774e9f6902b3c801dc1, type: 3}
+  DeathSound: {fileID: 8300000, guid: bc7431f846d2e7c449db2b20fc8eb9b2, type: 3}
   focus: {fileID: 0}
   maxHealth: 100
   currentHealth: 0
@@ -18686,7 +18686,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 56c55cedb7a5e4447870a2c2b289feba, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 377da18759d6d5d4e971caf1baac5156, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -30774,7 +30774,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0

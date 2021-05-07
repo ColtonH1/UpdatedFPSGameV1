@@ -119,27 +119,23 @@ public class Player : MonoBehaviour
             focus.OnDefocused();
         }
         focus = null;
-        //playerMovement.StopFollowingTarget();
     }
 
     private void Die()
     {
-        //Level01Controller.SetShowed(true);
         Impact.PlayOneShot(DeathSound);
         deathMenuUI.SetActive(true);
         reticle.SetActive(false);
         Level01Controller.SetCurrentTime(0f);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        //Time.timeScale = 0f;
         playerIsDead = true;
-
     }
 
     void TakeDamage(int damage)
     {
         //armor
-        damage -= armor;//.GetValue();
+        damage -= armor;
         damage = Mathf.Clamp(damage, 0, int.MaxValue);
 
         //clamp health
